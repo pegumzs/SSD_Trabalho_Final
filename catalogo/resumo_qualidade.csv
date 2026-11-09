@@ -1,0 +1,17 @@
+﻿dimensão,atributo,problema,ocorrências,tratamento (regra),efeito nas perguntas
+Completude,order_delivered_customer_date,"Pedido sem data de entrega (cancelado, em trânsito etc.)",2965 (8 com status delivered),Fora da tabela fato (R6),Só pedidos entregues têm atraso mensurável
+Completude,order_approved_at,Data de aprovação ausente,160,Etapa de aprovação fica nula; pedido mantido (R9),P3 usa só pedidos com as 3 etapas válidas
+Completude,order_id (avaliações),Pedido sem avaliação,768,"Nota nula, sem imputação",P5 usa só pedidos avaliados
+Completude,review_comment_title / message,Comentário em texto livre ausente (campo opcional),58.7% das avaliações,Coluna descartada (R4 - LGPD),Nenhum
+Unicidade,order_id (avaliações),Pedido com mais de uma avaliação,547,Mantida a avaliação mais recente (R5),Evita contar o mesmo pedido duas vezes na P5
+Unicidade,review_id,Mesma avaliação ligada a mais de um pedido,814,review_id não vai para a camada ouro; a nota é ligada ao pedido,Nenhum
+Consistência,order_delivered_carrier_date,Postagem registrada antes da aprovação,1359,Etapa de manuseio anulada; pedido mantido (R9),P3
+Consistência,order_delivered_customer_date,Entrega registrada antes da postagem,23,Etapa de transporte anulada; pedido mantido (R9),P3
+Consistência,order_status,Pedido cancelado com data de entrega,6,Excluído pelo filtro de status (R6),Nenhum
+Consistência (grão),seller_id (itens),Pedido com itens de mais de um vendedor,1278,Excluído da fato (R7),O atraso fica atribuível a um único vendedor (P3)
+Conformidade,customer/seller_zip_code_prefix,CEP gravado como número (perdeu o zero à esquerda),23995 clientes e 1027 vendedores,Texto com 5 dígitos (R2),Chave de CEP correta nas dimensões
+Conformidade,seller_city,"Cidade fora do padrão (número, e-mail, ""cidade/uf"")",18,"Mantida: atributo descritivo, não usado nas perguntas",Nenhum
+Acurácia,freight_value,Frete igual a zero,383 itens,Mantido: frete grátis é um valor real,P4: frete médio um pouco menor
+Acurácia,order_delivered_customer_date,Entrega em mais de 60 dias,288,Mantida: atraso real e extremo,Puxam as médias de tempo para cima
+Acurácia,order_estimated_delivery_date,Data estimada sem horário (sempre 00:00),100% dos pedidos,Atraso comparado por dia (R10),Evita superestimar a taxa de atraso
+Atualidade,order_purchase_timestamp,Poucos pedidos em 2016 e em set-out/2018,5 meses,P2 restrita a jan/2017-ago/2018,Limitação registrada na autoavaliação

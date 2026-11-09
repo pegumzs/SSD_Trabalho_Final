@@ -1,0 +1,14 @@
+Esquema estrela - camada ouro (MVP Olist Entregas)
+
+dim_tempo    (PK id_tempo)    1 ---- N  fato_entregas.id_tempo_compra
+dim_cliente  (PK id_cliente)  1 ---- N  fato_entregas.id_cliente
+dim_vendedor (PK id_vendedor) 1 ---- N  fato_entregas.id_vendedor
+
+fato_entregas (grão: 1 pedido entregue de um único vendedor)
+  PK id_pedido | FK id_cliente | FK id_vendedor | FK id_tempo_compra
+  medidas: qtd_itens, valor_produtos, valor_frete, dias_aprovacao, dias_manuseio,
+           dias_transporte, dias_entrega_total, dias_prometidos, dias_atraso,
+           flag_atraso, flag_postagem_atrasada, nota_avaliacao, tipo_envio, escopo_envio
+dim_cliente:  id_cliente, cep_prefixo, cidade, uf, regiao
+dim_vendedor: id_vendedor, cep_prefixo, cidade, uf, regiao
+dim_tempo:    id_tempo, data, ano, mes, ano_mes, trimestre, dia_semana
