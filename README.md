@@ -13,7 +13,6 @@ Pipeline de dados em nuvem (Google Colab + Google Drive) que transforma os pedid
 | Notebook completo (coleta → ETL → modelagem → análise → decisão) | [`notebooks/MVP_Olist_Entregas.ipynb`](notebooks/MVP_Olist_Entregas.ipynb) |
 | Catálogo de dados, diagrama do modelo e perfil de qualidade | [`catalogo/`](catalogo/) |
 | Gráficos, painel de decisão e simulação de cenários | [`evidencias/`](evidencias/) |
-| Artigo (short paper, 8 páginas, LaTeX + PDF) | [`artigo/`](artigo/) |
 
 ## Sumário
 
