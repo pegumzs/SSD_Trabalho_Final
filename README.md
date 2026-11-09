@@ -1,8 +1,8 @@
 # MVP — Sistema de Suporte à Decisão para Atrasos de Entrega no E-commerce (Olist)
 
 **Universidade de Brasília (UnB) · Departamento de Engenharia de Produção**
-**Disciplina:** Sistemas de Suporte à Decisão · **Professor:** André Luiz Marques Serrano
-**Aluno(a):** *[seu nome]* · **Matrícula:** *[sua matrícula]*
+**Disciplina:** Sistemas de Suporte à Decisão 
+**Aluno(a):** *Pedro Augusto de Menezes Filho* ·
 
 Pipeline de dados em nuvem (Google Colab + Google Drive) que transforma os pedidos públicos da Olist em um esquema estrela, diagnostica **onde, quando e por que** as entregas atrasam e propõe uma **linha de tomada de decisão**: regras que indicam o que fazer em cada UF e um simulador que mostra o efeito de cada opção.
 
