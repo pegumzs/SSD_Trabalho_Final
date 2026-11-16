@@ -4,7 +4,6 @@
 |---|---|
 | **Instituição** | Universidade de Brasília (UnB), Departamento de Engenharia de Produção |
 | **Disciplina** | Sistemas de Suporte à Decisão |
-| **Professor** | André Luiz Marques Serrano |
 | **Aluno** | Pedro Augusto de Menezes Filho (180114425) |
 | **Plataforma** | Google Colab (Python) + Google Drive (camadas bronze, prata e ouro) |
 | **Dados** | Dados Abertos da PRF: acidentes por ocorrência e por pessoa, 2024 e 2025 |
